@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96617af0-da47-44a7-b985-b6d2054cd878" name="Changes" comment="v imputed data sa nachádzajú NaN">
+    <list default="true" id="96617af0-da47-44a7-b985-b6d2054cd878" name="Changes" comment="vypocitanie MSE medzi originalnymi a vypocitanymi datamy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -106,7 +106,7 @@
       <workItem from="1734075711655" duration="2623000" />
       <workItem from="1735551168201" duration="4031000" />
       <workItem from="1735640259719" duration="643000" />
-      <workItem from="1735663801898" duration="4550000" />
+      <workItem from="1735663801898" duration="8105000" />
     </task>
     <task id="LOCAL-00001" summary="založenie projektu">
       <option name="closed" value="true" />
@@ -164,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735667091180</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="vypocitanie MSE medzi originalnymi a vypocitanymi datamy">
+      <option name="closed" value="true" />
+      <created>1735669783664</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1735669783664</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,9 +196,10 @@
     <MESSAGE value="nacitavanie dat" />
     <MESSAGE value="vytvorenie metody na imputaciu dat pomocou PCA" />
     <MESSAGE value="v imputed data sa nachádzajú NaN" />
-    <option name="LAST_COMMIT_MESSAGE" value="v imputed data sa nachádzajú NaN" />
+    <MESSAGE value="vypocitanie MSE medzi originalnymi a vypocitanymi datamy" />
+    <option name="LAST_COMMIT_MESSAGE" value="vypocitanie MSE medzi originalnymi a vypocitanymi datamy" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/USU_semestralka2_hrubizna$main.coverage" NAME="main Coverage Results" MODIFIED="1735669266447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/USU_semestralka2_hrubizna$main.coverage" NAME="main Coverage Results" MODIFIED="1735672869315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

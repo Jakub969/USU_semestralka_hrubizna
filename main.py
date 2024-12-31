@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.decomposition import PCA
 from sklearn.metrics import mean_squared_error
+from sklearn.preprocessing import StandardScaler
 
 df_missing = pd.read_csv("v5/v5_missing.csv")
 df_full = pd.read_csv("v5/v5_complete.csv")
@@ -26,14 +27,38 @@ def pca_imputation(df, max_iteration = 10,n_components = 5, tolerance = 0.001):
             break
     return copy_of_df
 
-df_inputed = pca_imputation(df_missing, max_iteration = 10,n_components = 1, tolerance = 0.001)
+scaler = StandardScaler()
+df_scaled = pd.DataFrame(
+    scaler.fit_transform(df_missing.iloc[:, 1:]),
+    columns=df_missing.columns[1:]
+)
 
+df_imputed = pca_imputation(df_scaled, max_iteration = 10, n_components = 3, tolerance = 0.001)
+
+df_imputed_original_scale = df_missing.copy()
+df_imputed_original_scale.iloc[:, 1:] = scaler.inverse_transform(df_imputed)
 mask_missing = df_missing.isna()
-imputed_values = df_inputed.values[mask_missing.values]
-original_values = df_full.values[mask_missing.values]
+
+imputed_values = df_imputed_original_scale.iloc[:, 1:].values[mask_missing.iloc[:, 1:].values]
+original_values = df_full.iloc[:, 1:].values[mask_missing.iloc[:, 1:].values]
 
 mse = mean_squared_error(original_values, imputed_values)
 print(f"Mean Squared Error (MSE) medzi originálnymi a doplnenými hodnotami: {mse}")
+
+# Imputácia priemerom
+mean_imputed = df_missing.fillna(df_missing.mean())
+
+# Maska bez prvého stĺpca (vzhľadom na očíslovanie)
+mask_missing_no_id = mask_missing.iloc[:, 1:]
+
+# Hodnoty na porovnanie
+original_values_mean = df_full.iloc[:, 1:].values[mask_missing_no_id.values]
+imputed_values_mean = mean_imputed.iloc[:, 1:].values[mask_missing_no_id.values]
+
+# MSE pre imputáciu priemerom
+mse_mean = mean_squared_error(original_values_mean, imputed_values_mean)
+print(f"MSE pri imputácii priemerom: {mse_mean}")
+
 
 #pca = PCA()
 #pca.fit(df_full)
