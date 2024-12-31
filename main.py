@@ -29,14 +29,12 @@ def pca_imputation(df, max_iteration = 10,n_components = 5, tolerance = 0.001):
 df_inputed = pca_imputation(df_missing, max_iteration = 10,n_components = 1, tolerance = 0.001)
 
 mask_missing = df_missing.isna()
-imputed_values = df_inputed[mask_missing].values
-original_values = df_full[mask_missing].values
+imputed_values = df_inputed.values[mask_missing.values]
+original_values = df_full.values[mask_missing.values]
 
-#mse = mean_squared_error(original_values, inputed_values)
-#print(f"Mean Squared Error (MSE) medzi originálnymi a doplnenými hodnotami: {mse}")
-# Overíme, či nie sú NaN v pôvodných a imputovaných hodnotách
-print("Sú NaN v original_values?", np.isnan(original_values).any())
-print("Sú NaN v imputed_values?", np.isnan(imputed_values).any())
+mse = mean_squared_error(original_values, imputed_values)
+print(f"Mean Squared Error (MSE) medzi originálnymi a doplnenými hodnotami: {mse}")
+
 #pca = PCA()
 #pca.fit(df_full)
 #explained_variance_ratio = np.cumsum(pca.explained_variance_ratio_)
