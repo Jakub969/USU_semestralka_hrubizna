@@ -45,17 +45,14 @@ original_values = df_full.iloc[:, 1:].values[mask_missing.iloc[:, 1:].values]
 mse = mean_squared_error(original_values, imputed_values)
 print(f"Mean Squared Error (MSE) medzi originálnymi a doplnenými hodnotami: {mse}")
 
-# Imputácia priemerom
-mean_imputed = df_missing.fillna(df_missing.mean())
+mean_imputed = df_missing.fillna(df_missing.mean())## Imputácia priemerom
 
-# Maska bez prvého stĺpca (vzhľadom na očíslovanie)
 mask_missing_no_id = mask_missing.iloc[:, 1:]
 
-# Hodnoty na porovnanie
 original_values_mean = df_full.iloc[:, 1:].values[mask_missing_no_id.values]
 imputed_values_mean = mean_imputed.iloc[:, 1:].values[mask_missing_no_id.values]
 
-# MSE pre imputáciu priemerom
+## MSE pre imputáciu priemerom
 mse_mean = mean_squared_error(original_values_mean, imputed_values_mean)
 print(f"MSE pri imputácii priemerom: {mse_mean}")
 
