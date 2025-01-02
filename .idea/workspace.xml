@@ -107,7 +107,8 @@
       <workItem from="1735551168201" duration="4031000" />
       <workItem from="1735640259719" duration="643000" />
       <workItem from="1735663801898" duration="8381000" />
-      <workItem from="1735747512196" duration="4014000" />
+      <workItem from="1735747512196" duration="5043000" />
+      <workItem from="1735834533212" duration="547000" />
     </task>
     <task id="LOCAL-00001" summary="založenie projektu">
       <option name="closed" value="true" />
@@ -181,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735673133616</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="porovnanie MSE pomocou PCA a priemerom">
+      <option name="closed" value="true" />
+      <created>1735754060812</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1735754060812</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +219,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="porovnanie MSE pomocou PCA a priemerom" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/USU_semestralka2_hrubizna$main.coverage" NAME="main Coverage Results" MODIFIED="1735673167662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/USU_semestralka2_hrubizna$main.coverage" NAME="main Coverage Results" MODIFIED="1735834724324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

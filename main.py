@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler
 df_missing = pd.read_csv("v5/v5_missing.csv")
 df_full = pd.read_csv("v5/v5_complete.csv")
 
-def pca_imputation(df, max_iteration = 10,n_components = 5, tolerance = 0.001):
+def pca_imputation(df, max_iteration = 10, n_components = 5, tolerance = 0.001):
     copy_of_df = df.copy() ##urobím kópiu vstupneho dataframeu
     copy_of_df[:] = copy_of_df.fillna(df.mean()) ##vyplnim chybajuce data priemerom
 
@@ -55,9 +55,3 @@ imputed_values_mean = mean_imputed.iloc[:, 1:].values[mask_missing_no_id.values]
 ## MSE pre imputáciu priemerom
 mse_mean = mean_squared_error(original_values_mean, imputed_values_mean)
 print(f"MSE pri imputácii priemerom: {mse_mean}")
-
-
-#pca = PCA()
-#pca.fit(df_full)
-#explained_variance_ratio = np.cumsum(pca.explained_variance_ratio_)
-#print(f"Kumulatívna variancia: {explained_variance_ratio}")
